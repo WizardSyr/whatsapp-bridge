@@ -11,7 +11,8 @@ const {
 } = require('@whiskeysockets/baileys');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+// KataBump / Pterodactyl uses SERVER_PORT or PORT, with 20274 as allocation fallback
+const PORT = process.env.SERVER_PORT || process.env.PORT || 20274;
 
 app.use(cors());
 app.use(express.json());
